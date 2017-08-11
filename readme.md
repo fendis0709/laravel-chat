@@ -58,8 +58,17 @@ This application was build using :
 - Create authentication scaffolding by running `php artisan make:auth`. <br>
 Make sure you've been create new database on your machine and set database name to `DB_DATABASE` on `.env` file
 - To get updated vendor package, you need to run `composer update`. Make sure you've installed [*composer package*](https://getcomposer.org/download)
+- To get updated Node JS package, run `npm update`
+- Almost done, now you need to open ***resources/assets/js/bootstrap.js*** using code editor. Then you have to set variable :
+    - `pusherKey` => *\<Your pusher app key (PUSHER_APP_KEY)\>*
+    - `pusherCluster` => *\<Your pusher app cluster (PUSHER_APP_CLUSTER)\>*
+- Run `npm run dev` to create webpack of ***resources/assets/js/bootstrap.js***
 - And finally, visit **localhost/laravel-chat/public** on your web browser
 - Optional, you can run web application on your php server. Run `php artisan serve`. Visit **localhost:8000** on your web browser
+
+## **Note**
+
+> If you edit ***resources/assets/js/bootstrap.js***, you have to run `npm run watch` after you save the file.
 
 ## Contact
 

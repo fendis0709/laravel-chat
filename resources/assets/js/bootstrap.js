@@ -48,10 +48,12 @@ import Echo from 'laravel-echo';
 window.Pusher = require('pusher-js');
 
 var siteurl = document.querySelector('meta[name="site-url"]').getAttribute('content');
+var pusherKey       = null;
+var pusherCluster   = null;
 window.Echo = new Echo({
     broadcaster : 'pusher',
-    key         : '72d4a98349f82e4daf07',
-    cluster     : 'ap1',
+    key         : pusherKey,
+    cluster     : pusherCluster,
     encrypted   : true,
     authEndpoint: siteurl + '/broadcasting/auth'
 });
