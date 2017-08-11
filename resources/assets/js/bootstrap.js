@@ -60,13 +60,15 @@ window.Echo = new Echo({
 
 console.log(window.Echo);
 
-var userId = localStorage.getItem('user.logged.id');
+var userId          = localStorage.getItem('user.logged.id');
+var notification    = require('./notifications/notification');
 
 window.Echo
     .private('chat-user.'+userId)
     .listen('Chat', (response) => {
         console.log('NEW MESSAGE');
         console.log(response);
+        notification.main('Anda mendapat pesan baru', response.data.message, null);
         $('#conversation-box').append('' +
             '<div class="row-chat opponent">\n' +
             '   <div class="alert alert-success text-left fit-to-content opponent-message" data-chat-message-id="' + response.data.message_id + '">\n' +
