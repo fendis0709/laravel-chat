@@ -48,6 +48,8 @@ import Echo from 'laravel-echo';
 window.Pusher = require('pusher-js');
 
 var siteurl = document.querySelector('meta[name="site-url"]').getAttribute('content');
+
+/** Pusher **/
 var pusherKey       = null;
 var pusherCluster   = null;
 window.Echo = new Echo({
@@ -57,6 +59,14 @@ window.Echo = new Echo({
     encrypted   : true,
     authEndpoint: siteurl + '/broadcasting/auth'
 });
+
+/** Laravel Echo Server **/
+// var socketPort  = null;
+// var serverIp    = null;
+// window.Echo     = new Echo({
+//     broadcaster : 'socket.io',
+//     host        : 'http://' + serverIp + ':' + socketPort
+// });
 
 console.log(window.Echo);
 

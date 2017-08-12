@@ -86,12 +86,14 @@
         @yield('content')
     </div>
 
+    <!-- Socket IO -->
+    <script type="text-javascript" src="{{ asset('assets/plugins/socket.io/socket.io.js') }}"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Tether -->
-    {{--<script type="text/javascript" src="{{ asset('assets/plugins/tether/dist/js/tether.min.js') }}"></script>--}}
+    <!--<script type="text/javascript" src="{{ asset('assets/plugins/tether/dist/js/tether.min.js') }}"></script>-->
     <!-- Bootstrap -->
-    {{--<script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>--}}
+    <!--<script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>-->
     <!-- SweetAlert 2 -->
     <script src="{{ asset('assets/plugins/sweetalert2/dist/sweetalert2.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
