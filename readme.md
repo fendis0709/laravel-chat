@@ -32,20 +32,21 @@ This application was build using :
 
 ## **Intallation Guide**
 
-- Make sure you have installed `git` on your own machine. You can download from [here](https://git-scm.com/downloads) or you can read documentation [here](https://git-scm.com/docs/gittutorial)
-- Open your ***terminal*** for Linux or ***git scm*** for windows
-- Move your pointer to htdoc directory
-- Clone this repository. Run `git clone https://github.com/fendiseptiawan0709/laravel-chat.git` on your htdoc directory.
+- Clone this repository to your htdoc directory. Run `git clone https://github.com/fendiseptiawan0709/laravel-chat.git`.
 - Once you've clone this repository, you will get ***laravel-chat*** folder on your htdoc directory.
-- Move your pointer to application folder or ***laravel-chat***
-- If you using Linux OS, you have to change onwership and permission of ***storage*** and ***bootstrap*** directory. You only need to run this following command<br/> 
+- Change your directory to application folder or ***laravel-chat***
+- If you are using Linux OS, you have to change ownership and permission of ***storage/*** and ***bootstrap/*** directory. You only need to run this following command<br/> 
     - `sudo chown www-data -R bootstrap/ storage/`
     - `sudo chmod 775 -R bootstrap/ storage/`
-- Create ***.env*** file from ***.env.example*** to root director of your application. If you using Linux OS, you can run `cp .env.example .env`
-- Check artisan command by running `php artisan`. If you get list of artisan command, then you ready to go
-- Run `php artisan key:generate`
+- To get updated vendor package, you need to run `composer update`. This will take several minutes depending on your internet connection. <br>
+Make sure you've installed [*composer package*](https://getcomposer.org/download)
+- Create ***.env*** file from ***.env.example*** to root directory of your application. <br>
+If you are using Linux OS, you can run `cp .env.example .env`
+- Check artisan command by running `php artisan`. <br>
+If you get list of artisan command, then you ready to go
+- Run `php artisan key:generate` to generate your application key.
 - Open `.env` file, and edit database configuration correspond to your machine. <br>
-    - DB_DATABASE=*\<your database name\>*
+    - DB_DATABASE=*\<your database name, create first if you don\'t have\>*
     - DB_USERNAME=*\<your mysql username, by default `root`\>*
     - DB_PASSWORD=*\<your mysql password, by default is empty\>*
     - BROADCAST_DRIVER=pusher
@@ -55,10 +56,12 @@ This application was build using :
     - PUSHER_APP_CLUSTER=*\<pusher app cluster\>*
     - PUSHER_APP_ENCRYPTION=true
     > You can set `PUSHER_APP_ID`, `PUSHER_APP_KEY`, `PUSHER_APP_SECRET`, `PUSHER_APP_CLUSTER` from your [Pusher Application Dashboard](dashboard.pusher.com). Make sure you have been create application from pusher.
-- Create authentication scaffolding by running `php artisan make:auth`. <br>
+- Create table into your new database by running `php artisan migrate`.<br>
 Make sure you've been create new database on your machine and set database name to `DB_DATABASE` on `.env` file
-- To get updated vendor package, you need to run `composer update`. Make sure you've installed [*composer package*](https://getcomposer.org/download)
-- To get updated Node JS package, run `npm update`
+    > This application have been create authentication scaffolding, so you don't have to run `php artisan make:auth`.
+- To get updated Node JS package, run `npm update` <br>
+This process take several minutes depending on your internet connection.<br>
+Make sure you've installed [NPM](https://www.npmjs.com/get-npm) and [Node JS](https://nodejs.org/en/download)
 - Almost done, now you need to open ***resources/assets/js/bootstrap.js*** using code editor. Then you have to set variable :
     - `pusherKey` => *\<Your pusher app key (PUSHER_APP_KEY)\>*
     - `pusherCluster` => *\<Your pusher app cluster (PUSHER_APP_CLUSTER)\>*
@@ -68,7 +71,7 @@ Make sure you've been create new database on your machine and set database name 
 
 ## **Note**
 
-> If you edit ***resources/assets/js/bootstrap.js***, you have to run `npm run watch` after you save the file.
+> If you edit ***resources/assets/js/bootstrap.js***, you have to run `npm run dev` after you save the file. (If you want to more easy way, you can set automatically npm to watch change on bootstrap.js after you save the file by running `npm run watch`)
 
 ## Contact
 
