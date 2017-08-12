@@ -19,3 +19,28 @@ module.exports  = {
         }
     }
 };
+
+function showNotification(parameters){
+    var title   = parameters.title;
+    var body    = parameters.body;
+    var link    = parameters.link;
+    var notification = null;
+    var options = {
+        body    : body,
+        icon    : site_url + '/assets/images/logo.png'
+    };
+    notification = new Notification(title, options);
+    notification.onclick = function(){
+        if(link !== null){
+            window.open(link, '_blank');
+            notification.close();
+        }
+    };
+
+    var audioogg        = new Audio('asset/plugins/audios/chat.ogg');
+    var audiomp3        = new Audio('asset/plugins/audios/chat.mp3');
+    if(eval(localStorage.sound) || true){
+        //audiomp3.play();
+        audioogg.play();
+    }
+}

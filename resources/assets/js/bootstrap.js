@@ -61,7 +61,7 @@ window.Echo = new Echo({
 console.log(window.Echo);
 
 var userId          = localStorage.getItem('user.logged.id');
-var notification    = require('./notifications/notification');
+var notification    = require('./notification/notification');
 
 window.Echo
     .private('chat-user.'+userId)
