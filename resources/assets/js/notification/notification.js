@@ -37,8 +37,8 @@ function showNotification(parameters){
         }
     };
 
-    var audioogg        = new Audio('asset/plugins/audios/chat.ogg');
-    var audiomp3        = new Audio('asset/plugins/audios/chat.mp3');
+    var audioogg        = new Audio(site_url + '/assets/audios/chat.ogg');
+    var audiomp3        = new Audio(site_url + '/assets/audios/chat.mp3');
     if(eval(localStorage.sound) || true){
         //audiomp3.play();
         audioogg.play();

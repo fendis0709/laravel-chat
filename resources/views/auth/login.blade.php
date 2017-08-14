@@ -7,6 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
+                    <div class="alert alert-danger alert-dismissable hidden" id="error-login-feedback">
+                        <p style="text-align: center"></p>
+                    </div>
                     <form class="form-horizontal" id="form-login" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -65,6 +68,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom_js')
     <script type="text/javascript">
         $(document).ready(function(){
             $('#form-login').on('submit', function(event){
@@ -72,13 +78,23 @@
                 var _this = $(this);
                 $.ajax({
                     url     : _this.attr('action'),
+                    type    : _this.attr('method'),
                     data    : new FormData(_this[0]),
+                    processData : false,
+                    contentType : false,
                     success : function(response){
                         console.log(response);
-                        localStorage.setItem('user.logged.id', response.data.id);
+                        if(response.status === 'error'){
+                            var error_message = response.message;
+                            $('#error-login-feedback').removeClass('hidden').children('p').text(error_message);
+                        } else {
+                            localStorage.setItem('user.logged.id', response.data.user_id);
+                            localStorage.setItem('user.role.id', response.data.role_id);
+                            window.location = response.data.redirect;
+                        }
                     },
                     error   : function(error){
-                        console.log(error);
+                        return console.log(error);
                     }
                 });
             });

@@ -75,8 +75,4 @@ class ChatController extends Controller
         }
         return $chat_id;
     }
-
-    private function responseJson($data, $statusCode = 200) {
-        return response()->json($data, $statusCode);
-    }
 }

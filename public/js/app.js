@@ -862,7 +862,8 @@ window.Pusher = __webpack_require__(36);
 
 var siteurl = document.querySelector('meta[name="site-url"]').getAttribute('content');
 
-/** Pusher **/
+/** Pusher Configuration **/
+/**--Start--**/
 var pusherKey = null;
 var pusherCluster = null;
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
@@ -872,14 +873,17 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     encrypted: true,
     authEndpoint: siteurl + '/broadcasting/auth'
 });
+/**--End--**/
 
 /** Laravel Echo Server **/
+/**--Start--**/
 // var socketPort  = null;
 // var serverIp    = null;
 // window.Echo     = new Echo({
 //     broadcaster : 'socket.io',
 //     host        : 'http://' + serverIp + ':' + socketPort
 // });
+/**--End--**/
 
 console.log(window.Echo);
 
@@ -36688,8 +36692,8 @@ function showNotification(parameters) {
         }
     };
 
-    var audioogg = new Audio('asset/plugins/audios/chat.ogg');
-    var audiomp3 = new Audio('asset/plugins/audios/chat.mp3');
+    var audioogg = new Audio(site_url + '/assets/audios/chat.ogg');
+    var audiomp3 = new Audio(site_url + '/assets/audios/chat.mp3');
     if (eval(localStorage.sound) || true) {
         //audiomp3.play();
         audioogg.play();

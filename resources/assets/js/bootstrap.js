@@ -49,7 +49,8 @@ window.Pusher = require('pusher-js');
 
 var siteurl = document.querySelector('meta[name="site-url"]').getAttribute('content');
 
-/** Pusher **/
+/** Pusher Configuration **/
+/**--Start--**/
 var pusherKey       = null;
 var pusherCluster   = null;
 window.Echo = new Echo({
@@ -59,18 +60,21 @@ window.Echo = new Echo({
     encrypted   : true,
     authEndpoint: siteurl + '/broadcasting/auth'
 });
+/**--End--**/
 
 /** Laravel Echo Server **/
+/**--Start--**/
 // var socketPort  = null;
 // var serverIp    = null;
 // window.Echo     = new Echo({
 //     broadcaster : 'socket.io',
 //     host        : 'http://' + serverIp + ':' + socketPort
 // });
+/**--End--**/
 
 console.log(window.Echo);
 
-var userId          = localStorage.getItem('user.logged.id');
+var userId  = localStorage.getItem('user.logged.id');
 var notification    = require('./notification/notification');
 
 window.Echo
