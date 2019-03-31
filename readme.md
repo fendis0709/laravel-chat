@@ -28,7 +28,7 @@ This application was build using :
 - [Node JS](https://nodejs.org/en/download)
 - [NPM](https://www.npmjs.com/get-npm)
 - [Composer](https://getcomposer.org/download) (absolutely require since you create Laravel Project)
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (if you want to clone this project)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (if you want to clone / fork this project)
 
 ## **Installation Guide**
 
@@ -36,9 +36,9 @@ This application was build using :
 - Clone this repository to your htdoc directory. Run `git clone https://github.com/fendiseptiawan0709/laravel-chat.git`.
 - Once you've clone this repository, you will get ***laravel-chat*** folder on your htdoc directory.
 - Change your directory to application folder or ***laravel-chat***
-- If you are using Linux OS, you have to change ownership and permission of ***storage/*** and ***bootstrap/*** directory. You only need to run this following command<br/> 
-    - `sudo chown www-data -R bootstrap/ storage/`
-    - `sudo chmod 775 -R bootstrap/ storage/`
+- If you are using Linux OS, you have to change ownership and permission of ***bootstrap/***, ***public/***, and ***storage/*** directory. You only need to run this following command<br/> 
+    - `sudo chown www-data -R bootstrap/ public/ storage/`
+    - `sudo chmod 775 -R bootstrap/ public/ storage/`
 - To get updated vendor package, you need to run `composer update`. This will take several minutes depending on your internet connection. <br>
 Make sure you've installed [*composer package*](https://getcomposer.org/download)
 - Create ***.env*** file from ***.env.example*** to root directory of your application. <br>
