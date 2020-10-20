@@ -1,19 +1,3 @@
-## Laravel Web Framework
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
-
-**[Read more about Laravel Framework](https://laravel.com/docs/)**
-
 ## **About Web Chat Application**
 
 This application is use for creating chatting web application in **realtime**.
@@ -56,7 +40,7 @@ Make sure you've been create new database on your machine and set database name 
 - To get updated Node JS package, run `npm update` <br>
 This process take several minutes depending on your internet connection.<br>
 Make sure you've installed [NPM](https://www.npmjs.com/get-npm) and [Node JS](https://nodejs.org/en/download)
-- And finally, visit **localhost/laravel-chat/public** on your web browser
+- And finally, visit **http://localhost/laravel-chat/public** on your web browser
 - Optional, you can run web application on your php server. Run `php artisan serve`. Visit **localhost:8000** on your web browser
 
 ### Step 2 - Configure Web Socket
@@ -84,7 +68,7 @@ Folow this step :
         - `pusherCluster` = *\<pusher app cluster\>*
 - Don't forget to comment / remark the Laravel Echo Server Configuration code
 - Now, you need to create webpack of your new configuration. Run `npm run dev`
-- Finally. Test your application. Visit `http://192.168.7.238/laravel-chat/public` on your web browser.
+- Finally. Test your application. Visit `http://localhost:8000` on your web browser.
 
 
 #### 2. Socket IO
